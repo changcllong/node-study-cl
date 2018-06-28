@@ -1,0 +1,62 @@
+{
+  "name": "node-study-cl",
+  "version": "1.0.0",
+  "description": "ssr server based on egg",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/changcllong/node-study-cl.git"
+  },
+  "author": "cl",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/changcllong/node-study-cl/issues"
+  },
+  "homepage": "https://github.com/changcllong/node-study-cl#readme",
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "egg": "^2.2.1",
+    "egg-scripts": "^2.5.0",
+    "egg-socket.io": "^4.0.8",
+    "egg-view-ejs": "^2.0.0",
+    "egg-view-react": "^1.1.0",
+    "prop-types": "^15.6.2",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-router": "^4.3.1"
+  },
+  "devDependencies": {
+    "autod": "^3.0.1",
+    "autod-egg": "^1.0.0",
+    "egg-bin": "^4.3.5",
+    "egg-ci": "^1.8.0",
+    "egg-mock": "^3.14.0",
+    "eslint": "^4.11.0",
+    "eslint-config-egg": "^6.0.0",
+    "webstorm-disable-index": "^1.2.0"
+  },
+  "scripts": {
+    "start": "egg-scripts start --daemon --title=egg-server-egg-example",
+    "stop": "egg-scripts stop --title=egg-server-egg-example",
+    "dev": "egg-bin dev",
+    "debug": "egg-bin debug",
+    "test": "npm run lint -- --fix && npm run test-local",
+    "test-local": "egg-bin test",
+    "cov": "egg-bin cov",
+    "lint": "eslint .",
+    "ci": "npm run lint && npm run cov",
+    "autod": "autod"
+  },
+  "ci": {
+    "version": "8"
+  },
+  "private": true,
+  "engines": {
+    "node": ">=8.9.0"
+  }
+}
