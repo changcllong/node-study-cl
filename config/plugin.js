@@ -9,3 +9,8 @@ exports.clreactssr = {
   // package: 'egg-view-react',
   path: path.join(__dirname, '../lib/plugin/egg-react-ssr-cl'),
 };
+
+exports.clpack = {
+  enable: true,
+  path: path.join(__dirname, '../lib/plugin/egg-pack-cl'),
+};

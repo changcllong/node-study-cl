@@ -1,30 +1,29 @@
 import React, { Component } from 'react';
-import { StaticRouter, Route } from 'react-router'
+import ReactDOM from 'react-dom';
+import { HashRouter, Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Test from './test';
+
+const locals = JSON.parse(window._INIT_STORE_);
 
 const PlaceHolder = () => {
   return (<p>HELLO SSR!!</p>);
 }
 
-export default class Index extends Component {
+class Index extends Component {
   getChildContext() {
-    return { list: this.props.list };
+    return { list: locals.list };
   }
 
   render() {
-    const {
-      list,
-      url
-    } = this.props;
     return (
       <div>
-        <StaticRouter location={url} context={{}}>
+        <HashRouter>
           <section>
             <Route exact path="/" component={Test}/>
             <Route path="/tip" component={PlaceHolder}/>
           </section>
-        </StaticRouter>
+        </HashRouter>
       </div>
     );
   }
@@ -32,4 +31,11 @@ export default class Index extends Component {
 
 Index.childContextTypes = {
   list: PropTypes.array
-}
+};
+
+ReactDOM.hydrate(
+  (
+    <Index />
+  ),
+  document.getElementById('app')
+);

@@ -6,7 +6,7 @@ export default class Test extends Component {
     return (
       <ul>
         {this.context.list.map(item => {
-          return (<li key={item}>第 {item} 项</li>);
+          return <li key={item}>列表第 {item} 项!</li>;
         })}
       </ul>
     );
@@ -15,4 +15,4 @@ export default class Test extends Component {
 
 Test.contextTypes = {
   list: PropTypes.array
-}
+};
